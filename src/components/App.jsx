@@ -52,7 +52,7 @@ class App extends React.Component {
       <div>
         <form method="POST" onSubmit={this.onSubmit}>
           <input type="text" name="text" value={this.state.text} onChange={this.handleText} />
-          <input type="submit" />
+          <input type="submit" disabled={!this.state.text} />
         </form>
         <TaskList
           tasks={this.state.items}
