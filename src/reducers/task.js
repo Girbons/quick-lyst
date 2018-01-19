@@ -10,7 +10,7 @@ const tasks = (state = [], action) => {
         }
       ]
 
-    case 'REMOVE_TASK':
+    case 'TOGGLE_TASK':
       return state.map(task =>
         (task.id === action.id) ? {...task, status: !task.status} : task
       )

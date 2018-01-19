@@ -10,9 +10,9 @@ export const addTask = text => {
 }
 
 
-export const removeTask = id => {
+export const toggleTask = id => {
   return {
-    type: 'REMOVE_TASK',
+    type: 'TOGGLE_TASK',
     id
   }
 }

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { TaskList } from '../components/TaskList';
-import { removeTask } from '../actions';
+import { toggleTask } from '../actions';
 
 
 const mapStateToProps = state => {
@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onTaskClick: id => {
-      dispatch(removeTask(id))
+      dispatch(toggleTask(id))
     }
   }
 }
