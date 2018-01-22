@@ -6,8 +6,8 @@ import { toggleTask, updateCounter } from '../actions'
 
 const mapStateToProps = state => {
   return {
-    tasks: state.tasks,
-    counter: state.completedTasks
+    tasks: state.tasks.tasks,
+    counter: state.tasks.completedTasks
   }
 }
 

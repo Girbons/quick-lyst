@@ -1,39 +1,23 @@
-import React from 'react'
-
+import React from 'react';
 import { connect } from 'react-redux'
 import { addTask } from '../actions'
 
+import TaskForm from '../components/Form'
 
-let AddTask = ({ dispatch }) => {
-  let input;
 
-  return (
-    <div>
-      <form
-        onSubmit={e => {
-          e.preventDefault()
-          if (!input.value.trim()) {
-            return
-          }
-          dispatch(addTask(input.value))
-          input.value = ''
-        }}
-      >
-        <input
-          ref={node => {
-            input = node
-          }}
-        />
-        <button type="submit">
-          Add Task
-        </button>
-      </form>
-    </div>
-  )
+let AddTask = (props) => {
+  return <TaskForm onSubmit={props.handleSubmit}/>;
 }
 
+const mapDispatchToProps = dispatch => ({
+  handleSubmit: value => dispatch(addTask(value.task))
+})
 
-AddTask = connect()(AddTask);
+
+AddTask = connect(
+  undefined,
+  mapDispatchToProps
+)(AddTask)
 
 
-export default AddTask;
+export default AddTask

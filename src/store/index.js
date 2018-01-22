@@ -1,7 +1,7 @@
 import { createStore, compose } from 'redux'
 import DevTools from '../containers/DevTools'
 
-import quickList from '../reducers'
+import rootReducer from '../reducers'
 
 
 const enhancer = compose(
@@ -9,6 +9,6 @@ const enhancer = compose(
   DevTools.instrument()
 );
 
-const store = createStore(quickList, enhancer);
+const store = createStore(rootReducer, enhancer);
 
 export default store;
