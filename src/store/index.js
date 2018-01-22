@@ -1,7 +1,7 @@
-import { createStore, compose } from 'redux';
-import DevTools from '../containers/DevTools';
+import { createStore, compose } from 'redux'
+import DevTools from '../containers/DevTools'
 
-import quickList from '../reducers';
+import quickList from '../reducers'
 
 
 const enhancer = compose(

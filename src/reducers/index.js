@@ -1,4 +1,4 @@
-import tasks from '../reducers/task';
+import tasks from '../reducers/task'
 
 
 const quickList = tasks;

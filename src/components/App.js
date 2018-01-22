@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import AddTask from '../containers/AddTask';
-import VisibleTasks from '../containers/VisbileTasks';
+import AddTask from '../containers/AddTask'
+import VisibleTasks from '../containers/VisbileTasks'
 
 
 const App = () => (

@@ -16,3 +16,10 @@ export const toggleTask = id => {
     id
   }
 }
+
+export const updateCounter = id => {
+  return {
+    type: 'UPDATE_COUNTER',
+    id
+  }
+}
