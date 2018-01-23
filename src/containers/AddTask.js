@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { reset } from 'redux-form'
 import { addTask } from '../actions'
 
 import TaskForm from '../components/Form'
@@ -10,7 +11,11 @@ let AddTask = (props) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  handleSubmit: value => dispatch(addTask(value.task))
+  handleSubmit: value => {
+    dispatch(addTask(value.task))
+    // reset redux form
+    dispatch(reset('task'))
+  }
 })
 
 

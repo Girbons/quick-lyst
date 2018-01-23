@@ -5,8 +5,8 @@ import tasks from '../reducers/task'
 
 
 const rootReducer = combineReducers({
-  form: formReducer,
-  data: tasks
+  data: tasks,
+  form: formReducer
 })
 
 export default rootReducer;
