@@ -1,4 +1,4 @@
-const initialState = { tasks: [], counter: 0}
+const initialState = { tasks: [] }
 
 const tasks = (state = initialState, action) => {
 
@@ -12,14 +12,9 @@ const tasks = (state = initialState, action) => {
       return { ...state, tasks: state.tasks.concat(newTask)}
 
     case 'TOGGLE_TASK':
-      let tasks = state.tasks.map(task =>
+      return {...state, tasks: state.tasks.map(task =>
         (task.id === action.id) ? {...task, status: !task.status} : task
-      )
-      return {
-        ...state,
-        tasks,
-        counter: tasks.reduce((acc, t) => t.status ? acc + 1 : acc, 0)
-      };
+      )}
 
     default:
       return state
