@@ -1,4 +1,6 @@
-import { createStore, compose } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
+import promiseMiddleware from 'redux-promise-middleware';
+import thunk from 'redux-thunk'
 import DevTools from '../containers/DevTools'
 
 import rootReducer from '../reducers'
@@ -9,6 +11,14 @@ const enhancer = compose(
   DevTools.instrument()
 );
 
-const store = createStore(rootReducer, enhancer);
+const store = createStore(
+  rootReducer,
+  enhancer,
+
+  applyMiddleware(
+    thunk,
+    promiseMiddleware()
+  )
+);
 
 export default store;

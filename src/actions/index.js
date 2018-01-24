@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 let taskId = 0;
 
 export const addTask = text => {
@@ -28,3 +30,8 @@ export const decrement = () => {
     type: 'DECREMENT'
   }
 }
+
+export const bitcoinRequest = () => ({
+  type: 'BITCOIN_REQUEST',
+  payload: axios.get("https://api.coinbase.com/v2/exchange-rates?currency=BTC")
+})
